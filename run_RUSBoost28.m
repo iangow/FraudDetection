@@ -14,14 +14,14 @@ for year_test = 1999:2014
     data_train = data_reader('uscecchini28.csv','uscecchini28',1991,year_test-gap);
     y_train = data_train.labels;
     X_train = data_train.features;
-    newpaaer_train = data_train.newpaaers;
+    paaer_train = data_train.paaers;
     data_test = data_reader('uscecchini28.csv','uscecchini28',year_test,year_test);
     y_test = data_test.labels;
     X_test = data_test.features;
-    newpaaer_test = unique(data_test.newpaaers(data_test.labels~=0));
+    paaer_test = unique(data_test.paaers(data_test.labels~=0));
     % handle serial frauds as described in our paper
     num_frauds = sum(y_train==1);
-    y_train(ismember(newpaaer_train,newpaaer_test))=0;
+    y_train(ismember(paaer_train, paaer_test))=0;
     num_frauds = num_frauds - sum(y_train==1);
     fprintf('Recode %d overlapped frauds (i.e., change fraud label from 1 to 0).\n',num_frauds);
 
