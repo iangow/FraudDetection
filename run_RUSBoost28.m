@@ -23,7 +23,7 @@ for year_test = 1999:2014
     
     % handle serial frauds as described in our paper
     num_frauds = sum(y_train==1);
-    y_train(year_test <= aaer_year)=0;
+    y_train(year_test < aaer_year)=0;
     num_frauds = num_frauds - sum(y_train==1);
     fprintf('Recode %d overlapped frauds (i.e., change fraud label from 1 to 0).\n',num_frauds);
 
