@@ -4,24 +4,26 @@
 
 %% set parameters
 iters = 3000; % the number of iterations/trees of RUSBoost model
-gap = 2; % the gap between training and testing periods, 2-year gap by default
+gap = 0; % the gap between training and testing periods; changed to 0 years
 
 %% train and test models
-for year_test = 2003:2008
+for year_test = 1999:2014
     rng(0,'twister'); % fix random seed for reproducing the results
     % read training data
     fprintf('Running RUSBoost (training period: 1991-%d, testing period: %d, with %d-year gap)...\n',year_test-gap,year_test,gap);
-    data_train = data_reader('uscecchini28.csv','uscecchini28',1991,year_test-gap);
+    
+    data_train = data_reader('uscecchini28_aaer_years.csv','uscecchini28',1991,year_test-gap);
     y_train = data_train.labels;
     X_train = data_train.features;
-    newpaaer_train = data_train.newpaaers;
-    data_test = data_reader('uscecchini28.csv','uscecchini28',year_test,year_test);
+    aaer_year = data_train.aaer_year;
+    
+    data_test = data_reader('uscecchini28_aaer_years.csv','uscecchini28',year_test,year_test);
     y_test = data_test.labels;
     X_test = data_test.features;
-    newpaaer_test = unique(data_test.newpaaers(data_test.labels~=0));
+    
     % handle serial frauds as described in our paper
     num_frauds = sum(y_train==1);
-    y_train(ismember(newpaaer_train,newpaaer_test))=0;
+    y_train(year_test <= aaer_year)=0;
     num_frauds = num_frauds - sum(y_train==1);
     fprintf('Recode %d overlapped frauds (i.e., change fraud label from 1 to 0).\n',num_frauds);
 
