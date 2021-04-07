@@ -7,7 +7,7 @@ iters = 3000; % the number of iterations/trees of RUSBoost model
 gap = 2; % the gap between training and testing periods, 2-year gap by default
 
 %% train and test models
-for year_test = 2003:2008
+for year_test = 1999:2014
     rng(0,'twister'); % fix random seed for reproducing the results
     % read training data
     fprintf('Running RUSBoost (training period: 1991-%d, testing period: %d, with %d-year gap)...\n',year_test-gap,year_test,gap);
