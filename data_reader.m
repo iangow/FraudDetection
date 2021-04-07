@@ -26,6 +26,7 @@ switch data_type
         data.paaers = temp(idx, 7);
         data.newpaaers = temp(idx, 8);
         data.labels = temp(idx, 9);
+        data.aaer_year = temp(idx, 52);
         data.features = temp(idx,10:37);
         data.num_obervations = size(data.features,1);
         data.num_features = size(data.features,2);
