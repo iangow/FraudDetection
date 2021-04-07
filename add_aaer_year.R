@@ -1,10 +1,6 @@
 library(farr)
 library(dplyr, warn.conflicts = FALSE)
 library(readr)
-library(stringr)
-
-aaer_url <- paste0("https://raw.githubusercontent.com/JarFraud/",
-                   "FraudDetection/master/uscecchini28.csv")
 
 uscecchini28 <- read_csv("uscecchini28.csv")
 
