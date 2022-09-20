@@ -7,7 +7,11 @@ iters = 3000; % the number of iterations/trees of RUSBoost model
 gap = 2; % the gap between training and testing periods, 2-year gap by default
 
 %% train and test models
-for year_test = 1999:2014
+fid = fopen('results_rusboost28.csv','wt');
+fprintf(fid, 'year,auc,ndcg_at_k,sensitivity,precision\n');
+fclose(fid);
+
+for year_test = 2003:2008
     rng(0,'twister'); % fix random seed for reproducing the results
     % read training data
     fprintf('Running RUSBoost (training period: 1991-%d, testing period: %d, with %d-year gap)...\n',year_test-gap,year_test,gap);
@@ -42,7 +46,7 @@ for year_test = 1999:2014
 
     % print evaluation results
     fprintf('Training time: %g seconds | Testing time %g seconds \n', t_train, t_test);
-    metrics = evaluate(y_test,label_predict,dec_values,0.01); % topN=0.01
+    metrics = evaluate(y_test,label_predict,dec_values, 0.01); % topN=0.01
     fprintf('Performance (top1%% as cut-off thresh): \n');
     fprintf('AUC: %.4f \n', metrics.auc);
     fprintf('NCDG@k=top1%%: %.4f \n', metrics.ndcg_at_k);
@@ -52,9 +56,7 @@ for year_test = 1999:2014
 
     % turn on the following lines of code if your want to save prediction results in a file
     output_filename = ['results_rusboost28.csv'];
-    dlmwrite(output_filename,[num2str(year_test), metrics.auc,
-                                metrics.ndcg_at_k, metrics.sensitivity_topk*100,
-                                metrics.precision_topk*100],'precision','%g');
+    dlmwrite(output_filename,[year_test, metrics.auc, metrics.ndcg_at_k, metrics.sensitivity_topk, metrics.precision_topk],'precision','%g', '-append');
 
     % turn on the following lines of code if your want to save prediction results in a file
     output_filename = ['prediction_rusboost28_',num2str(year_test),'.csv'];
