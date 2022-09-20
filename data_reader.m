@@ -14,7 +14,7 @@ switch data_type
         data.features = temp(idx,4:end);
         data.num_obervations = size(data.features,1);
         data.num_features = size(data.features,2);
-    case 'uscecchini28' % read data with 28 uscecchini raw variables as features
+    case 'data_default' % read data with 28 uscecchini raw variables as features
         data.years = temp(:, 1);
         idx = data.years>=year_start & data.years<=year_end;
         data.years = temp(idx, 1);
