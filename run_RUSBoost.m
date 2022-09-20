@@ -9,21 +9,22 @@ gap = 2; % the gap between training and testing periods, 2-year gap by default
 %% train and test models
 for year_test = 2003:2008
     rng(0,'twister'); % fix random seed for reproducing the results
+
     % read training data
     fprintf('Running RUSBoost (training period: 1991-%d, testing period: %d, with %d-year gap)...\n',year_test-gap,year_test,gap);
     data_train = data_reader('data_FraudDetection_JAR2020.csv','data_default',1991,year_test-gap);
     y_train = data_train.labels;
     X_train = data_train.features;
-    newpaaer_train = data_train.newpaaers;
+    paaer_train = data_train.paaers;
+
+    % read testing data
     data_test = data_reader('data_FraudDetection_JAR2020.csv','data_default',year_test,year_test);
     y_test = data_test.labels;
     X_test = data_test.features;
-    newpaaer_test = unique(data_test.newpaaers(data_test.labels~=0));
-    % handle serial frauds as described in our paper
-    num_frauds = sum(y_train==1);
-    y_train(ismember(newpaaer_train,newpaaer_test))=0;
-    num_frauds = num_frauds - sum(y_train==1);
-    fprintf('Recode %d overlapped frauds (i.e., change fraud label from 1 to 0).\n',num_frauds);
+    paaer_test = unique(data_test.paaers(data_test.labels~=0));
+
+    % handle serial frauds using PAAER
+    y_train(ismember(paaer_train,paaer_test)) = 0;
 
     % train model
     t1 = tic;
