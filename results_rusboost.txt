@@ -1,0 +1,348 @@
+==> Running RUSBoost (training period: 1991-2001, testing period: 2003, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 67166 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5981 observations.
+Training time: 8.1963 seconds | Testing time 1.92127 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.7359 
+NCDG@k: 0.0897 
+Sensitivity: 10.14% 
+Precision: 11.67% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.7359 
+NCDG@k: 0.0909 
+Sensitivity: 11.59% 
+Precision: 6.67% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.7359 
+NCDG@k: 0.0995 
+Sensitivity: 13.04% 
+Precision: 5.03% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.7359 
+NCDG@k: 0.1154 
+Sensitivity: 15.94% 
+Precision: 4.60% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.7359 
+NCDG@k: 0.1383 
+Sensitivity: 20.29% 
+Precision: 4.68% 
+==> Running RUSBoost (training period: 1991-2002, testing period: 2004, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 73233 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5934 observations.
+Training time: 7.7151 seconds | Testing time 0.425649 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.7788 
+NCDG@k: 0.0285 
+Sensitivity: 3.45% 
+Precision: 3.39% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.7788 
+NCDG@k: 0.0499 
+Sensitivity: 6.90% 
+Precision: 3.36% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.7788 
+NCDG@k: 0.0698 
+Sensitivity: 10.34% 
+Precision: 3.37% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.7788 
+NCDG@k: 0.0787 
+Sensitivity: 12.07% 
+Precision: 2.95% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.7788 
+NCDG@k: 0.0962 
+Sensitivity: 15.52% 
+Precision: 3.03% 
+==> Running RUSBoost (training period: 1991-2003, testing period: 2005, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 79214 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5863 observations.
+Training time: 8.01406 seconds | Testing time 0.422675 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.7138 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.7138 
+NCDG@k: 0.0247 
+Sensitivity: 4.44% 
+Precision: 1.71% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.7138 
+NCDG@k: 0.0365 
+Sensitivity: 6.67% 
+Precision: 1.70% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.7138 
+NCDG@k: 0.0583 
+Sensitivity: 11.11% 
+Precision: 2.13% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.7138 
+NCDG@k: 0.0790 
+Sensitivity: 15.56% 
+Precision: 2.39% 
+==> Running RUSBoost (training period: 1991-2004, testing period: 2006, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 85148 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5908 observations.
+Training time: 9.47809 seconds | Testing time 0.500425 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.7558 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.7558 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.7558 
+NCDG@k: 0.0142 
+Sensitivity: 3.03% 
+Precision: 0.56% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.7558 
+NCDG@k: 0.0275 
+Sensitivity: 6.06% 
+Precision: 0.85% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.7558 
+NCDG@k: 0.0530 
+Sensitivity: 12.12% 
+Precision: 1.36% 
+==> Running RUSBoost (training period: 1991-2005, testing period: 2007, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 91011 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5868 observations.
+Training time: 9.27161 seconds | Testing time 0.403355 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.7126 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.7126 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.7126 
+NCDG@k: 0.0158 
+Sensitivity: 3.33% 
+Precision: 0.57% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.7126 
+NCDG@k: 0.0297 
+Sensitivity: 6.67% 
+Precision: 0.85% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.7126 
+NCDG@k: 0.0565 
+Sensitivity: 13.33% 
+Precision: 1.37% 
+==> Running RUSBoost (training period: 1991-2006, testing period: 2008, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 96919 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5612 observations.
+Training time: 9.52893 seconds | Testing time 0.34746 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.6401 
+NCDG@k: 0.0240 
+Sensitivity: 3.85% 
+Precision: 1.79% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.6401 
+NCDG@k: 0.0240 
+Sensitivity: 3.85% 
+Precision: 0.89% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.6401 
+NCDG@k: 0.0240 
+Sensitivity: 3.85% 
+Precision: 0.60% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.6401 
+NCDG@k: 0.0240 
+Sensitivity: 3.85% 
+Precision: 0.45% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.6401 
+NCDG@k: 0.0240 
+Sensitivity: 3.85% 
+Precision: 0.36% 
+==> Running RUSBoost (training period: 1991-2007, testing period: 2009, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 102787 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5367 observations.
+Training time: 9.93489 seconds | Testing time 0.344306 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.6636 
+NCDG@k: 0.0247 
+Sensitivity: 3.23% 
+Precision: 1.85% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.6636 
+NCDG@k: 0.0419 
+Sensitivity: 6.45% 
+Precision: 1.87% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.6636 
+NCDG@k: 0.0565 
+Sensitivity: 9.68% 
+Precision: 1.86% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.6636 
+NCDG@k: 0.0710 
+Sensitivity: 12.90% 
+Precision: 1.86% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.6636 
+NCDG@k: 0.0710 
+Sensitivity: 12.90% 
+Precision: 1.49% 
+==> Running RUSBoost (training period: 1991-2008, testing period: 2010, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 108399 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5389 observations.
+Training time: 11.1297 seconds | Testing time 0.353996 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.6818 
+NCDG@k: 0.0255 
+Sensitivity: 3.85% 
+Precision: 1.85% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.6818 
+NCDG@k: 0.0822 
+Sensitivity: 15.38% 
+Precision: 3.70% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.6818 
+NCDG@k: 0.0822 
+Sensitivity: 15.38% 
+Precision: 2.47% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.6818 
+NCDG@k: 0.0822 
+Sensitivity: 15.38% 
+Precision: 1.85% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.6818 
+NCDG@k: 0.0822 
+Sensitivity: 15.38% 
+Precision: 1.49% 
+==> Running RUSBoost (training period: 1991-2009, testing period: 2011, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 113766 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5404 observations.
+Training time: 10.6694 seconds | Testing time 0.349579 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.7716 
+NCDG@k: 0.0262 
+Sensitivity: 4.76% 
+Precision: 1.85% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.7716 
+NCDG@k: 0.0474 
+Sensitivity: 9.52% 
+Precision: 1.85% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.7716 
+NCDG@k: 0.0474 
+Sensitivity: 9.52% 
+Precision: 1.23% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.7716 
+NCDG@k: 0.0843 
+Sensitivity: 19.05% 
+Precision: 1.85% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.7716 
+NCDG@k: 0.0843 
+Sensitivity: 19.05% 
+Precision: 1.48% 
+==> Running RUSBoost (training period: 1991-2010, testing period: 2012, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 119155 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5630 observations.
+Training time: 11.4081 seconds | Testing time 0.367795 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.7698 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.7698 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.7698 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.7698 
+NCDG@k: 0.0388 
+Sensitivity: 10.53% 
+Precision: 0.89% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.7698 
+NCDG@k: 0.0388 
+Sensitivity: 10.53% 
+Precision: 0.71% 
+==> Running RUSBoost (training period: 1991-2011, testing period: 2013, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 124559 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5647 observations.
+Training time: 12.4544 seconds | Testing time 0.374795 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.7184 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.7184 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.7184 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.7184 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.7184 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+==> Running RUSBoost (training period: 1991-2012, testing period: 2014, with 2-year gap)...
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 130189 observations.
+Data Loaded: data_FraudDetection_JAR2020.csv, 28 features, 5627 observations.
+Training time: 12.2572 seconds | Testing time 0.35067 seconds 
+Performance (top1% as cut-off thresh): 
+AUC: 0.6927 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top2% as cut-off thresh): 
+AUC: 0.6927 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top3% as cut-off thresh): 
+AUC: 0.6927 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top4% as cut-off thresh): 
+AUC: 0.6927 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 
+Performance (top5% as cut-off thresh): 
+AUC: 0.6927 
+NCDG@k: 0.0000 
+Sensitivity: 0.00% 
+Precision: 0.00% 

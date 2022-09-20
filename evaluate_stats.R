@@ -2,8 +2,6 @@ library(readr)
 library(dplyr, warn.conflicts = FALSE)
 library(tidyr)
 
-# setwd("~/Downloads/prediciton_rusboost28_2003-2008")
-
 get_stats <- function(year) {
 
   read_csv(paste0("prediction_rusboost28_", year, ".csv"),
@@ -22,7 +20,20 @@ results <-
          tn = `FALSE_FALSE`,
          fp = `FALSE_TRUE`,
          fn = `TRUE_FALSE`) %>%
-  mutate(tp = coalesce(tp, 0))
+  mutate(tp = coalesce(tp, 0)) %>%
+  mutate(ppv = tp/(tp+fp),
+         acc = tp/(tp+fn),
+         prec = tp/(tp+fp))
 
 results %>%
-  mutate(ppv = tp/(tp+fp))
+  summarize(across(tn:prec, mean))
+
+results %>%
+  summarize(across(tn:tp, sum)) %>%
+  mutate(acc = tp/(tp+fn), prec = tp/(tp+fp))
+
+results_auc <- read_csv("results_rusboost28.csv")
+mean(results_auc$auc)
+mean(results_auc$ndcg_at_k)
+mean(results_auc$sensitivity)
+mean(results_auc$precision)
