@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% set parameters
-iters = 3000; % the number of iterations/trees of RUSBoost model
+iters = 300; % the number of iterations/trees of RUSBoost model
 gap = 2; % the gap between training and testing periods, 2-year gap by default
 
 %% train and test models
