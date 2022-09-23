@@ -32,7 +32,7 @@ results %>%
   summarize(across(tn:tp, sum)) %>%
   mutate(acc = tp/(tp+fn), prec = tp/(tp+fp))
 
-results_auc <- read_csv("results_rusboost28.csv")
+results_auc <- read_csv("results_rusboost28.csv") %>% filter(year < 2009)
 mean(results_auc$auc)
 mean(results_auc$ndcg_at_k)
 mean(results_auc$sensitivity)

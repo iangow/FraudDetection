@@ -11,7 +11,7 @@ fid = fopen('results_rusboost28.csv','wt');
 fprintf(fid, 'year,auc,ndcg_at_k,sensitivity,precision\n');
 fclose(fid);
 
-for year_test = 2003:2008
+for year_test = 2003:2014
     rng(0,'twister'); % fix random seed for reproducing the results
     % read training data
     fprintf('Running RUSBoost (training period: 1991-%d, testing period: %d, with %d-year gap)...\n',year_test-gap,year_test,gap);
@@ -55,11 +55,11 @@ for year_test = 2003:2008
     % fprintf('Importance of predictors:%d\n', output.imp);
 
     % turn on the following lines of code if your want to save prediction results in a file
-    output_filename = ['results_rusboost28.csv'];
-    dlmwrite(output_filename,[year_test, metrics.auc, metrics.ndcg_at_k, metrics.sensitivity_topk, metrics.precision_topk],'precision','%g', '-append');
+    output_filename = 'results_rusboost28.csv';
+    dlmwrite(output_filename, [year_test, metrics.auc, metrics.ndcg_at_k, metrics.sensitivity_topk, metrics.precision_topk], 'precision','%g', '-append');
 
     % turn on the following lines of code if your want to save prediction results in a file
-    output_filename = ['prediction_rusboost28_',num2str(year_test),'.csv'];
-    dlmwrite(output_filename,[data_test.years, data_test.firms, y_test, dec_values],'precision','%g');
+    output_filename = ['prediction_rusboost28_', num2str(year_test),'.csv'];
+    dlmwrite(output_filename, [data_test.years, data_test.firms, y_test, dec_values], 'precision', '%g');
 
 end
