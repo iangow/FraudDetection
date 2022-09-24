@@ -9,7 +9,7 @@
   sample(rows, length(rows), replace = TRUE, prob = w)
 }
 
-D.update <- function(prob, prediction, actual, D, smooth) {
+D.update <- function(prob, prediction, actual, D, smooth, learn_rate = 1) {
   
   # Pseudo-loss calculation for AdaBoost.M2
   fp <- which(prediction == "1" & actual == "0")
@@ -23,7 +23,7 @@ D.update <- function(prob, prediction, actual, D, smooth) {
                        D[fn] * (1 + n_diff))
   
   # Weight updater with prediction smoothing, dealing with a == 0
-  beta <- (p_loss + smooth) / (1 - p_loss + smooth)
+  beta <- learn_rate * (p_loss + smooth) / (1 - p_loss + smooth)
   D[f] <- rep(1/length(f), length(f))
   w_fn <- 0.5 * (1 - n_diff)
   w_fp <- 0.5 * (1 - p_diff)
@@ -34,7 +34,7 @@ D.update <- function(prob, prediction, actual, D, smooth) {
   return(list(D = D, beta = beta))
 }
 
-rusboost <- function(formula, data, size, ir = 1) {
+rusboost <- function(formula, data, size, ir = 1, learn_rate = 1) {
     target <- as.character(as.formula(formula)[[2]])
     weakLearners <- list()
     beta <- 0
@@ -53,7 +53,7 @@ rusboost <- function(formula, data, size, ir = 1) {
         pred <- predict(fm, data, type = "class")
         
         # Get updated weights
-        new <- D.update(prob = prob, prediction = pred, 
+        new <- D.update(prob = prob, prediction = pred, learn_rate = learn_rate,
                           actual = label, D = D, smooth = 1/length(rows_final))
         D <- new[["D"]]
         weakLearners[[i]] <- fm
