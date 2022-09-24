@@ -43,7 +43,7 @@ formula <- paste(y_var, "~", paste(X_vars, collapse = " + "))
 
 
 set.seed(2021)
-fm <- rus(formula, data_train, size = 300)
+fm <- rus(formula, data_train, size = 30)
 scores <- predict(fm, data_test, type = "prob")
 fit <- predict(fm, data_test, type = "class")
 auc(as.numeric(data_test$misstate), as.numeric(scores))
