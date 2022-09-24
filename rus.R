@@ -65,7 +65,7 @@ rusboost <- function(formula, data, size, ir = 1) {
 }
 
 # Prediction for Boosting-based method
-predict.rusboost <- function(object, newdata, type = "prob", learn_rate = 0.1, ...) {
+predict.rusboost <- function(object, newdata, type = "prob", ...) {
   models <- object[["weakLearners"]]
   
   predict_pos <- function(model) {
@@ -75,7 +75,7 @@ predict.rusboost <- function(object, newdata, type = "prob", learn_rate = 0.1, .
   probs <- lapply(models, predict_pos)
   
   beta <- object[["beta"]] 
-  beta <- beta * learn_rate ^ (0:(length(beta)-1))
+  beta <- beta ^ (0:(length(beta)-1))
   # normalize beta values
   beta <- log(1/beta) / sum(log(1/beta))
   
