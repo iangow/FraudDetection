@@ -21,29 +21,30 @@ df <-
   na.omit() %>%
   as.data.frame()
 
-test_year <- 2003
-gap <- 2
+for (test_year in 2003:2014) {
+  
+  gap <- 2
+  
+  data_test <- 
+    df %>%
+    filter(fyear == test_year) %>%
+    mutate(misstate = factor(misstate))
+  
+  data_train <- 
+    df %>%
+    filter(between(fyear, 1991, test_year - gap)) %>%
+    mutate(recode = new_p_aaer %in% unique(data_test$new_p_aaer) & new_p_aaer != "",
+           misstate = if_else(!recode, misstate, 0)) %>%
+    mutate(misstate = factor(misstate))
+  
+  sum(data_train$recode)
+  
+  formula <- paste(y_var, "~", paste(X_vars, collapse = " + "))
+  
+  set.seed(2021)
+  fm <- rusboost(formula, data_train, size = 300, learn_rate = 0.1)
+  scores <- predict(fm, data_test, type = "prob")
+  fit <- predict(fm, data_test, type = "class")
+  print(auc(as.numeric(data_test$misstate), as.numeric(scores)))
+}
 
-data_test <- 
-  df %>%
-  filter(fyear == test_year) %>%
-  mutate(misstate = factor(misstate))
-
-data_train <- 
-  df %>%
-  filter(between(fyear, 1991, test_year - gap)) %>%
-  mutate(recode = new_p_aaer %in% unique(data_test$new_p_aaer) & new_p_aaer != "",
-         misstate = if_else(!recode, misstate, 0)) %>%
-  mutate(misstate = factor(misstate))
-
-sum(data_train$recode)
-
-
-formula <- paste(y_var, "~", paste(X_vars, collapse = " + "))
-
-
-set.seed(2021)
-fm <- rusboost(formula, data_train, size = 30, learn_rate = 0.1)
-scores <- predict(fm, data_test, type = "prob")
-fit <- predict(fm, data_test, type = "class")
-auc(as.numeric(data_test$misstate), as.numeric(scores))
