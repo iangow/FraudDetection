@@ -75,9 +75,6 @@ predict.rusboost <- function(object, newdata, type = "prob", ...) {
   probs <- lapply(models, predict_pos)
   
   beta <- object[["beta"]] 
-  beta <- beta ^ (0:(length(beta)-1))
-  # normalize beta values
-  beta <- log(1/beta) / sum(log(1/beta))
   
   # Weight models
   prob <- rowSums(mapply("*", probs, beta))
