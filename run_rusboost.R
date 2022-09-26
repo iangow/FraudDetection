@@ -14,14 +14,15 @@ y_var <- "misstate"
 
 
 df <- 
-  read_csv("data_FraudDetection_JAR2020.csv") %>% 
+  read_csv("data_FraudDetection_JAR2020.csv",
+           show_col_types = FALSE) %>% 
   mutate(misstate = coalesce(misstate, 0),
          new_p_aaer = coalesce(as.character(new_p_aaer), "")) %>%
   select(one_of(c(y_var, X_vars, "new_p_aaer", "fyear"))) %>%
   na.omit() %>%
   as.data.frame()
 
-for (test_year in 2003:2014) {
+for (test_year in 2003:2003) {
   
   gap <- 2
   
