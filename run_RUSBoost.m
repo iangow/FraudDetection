@@ -34,15 +34,16 @@ for year_test = 2003:2014
     t1 = tic;
     t = templateTree('MinLeafSize',5); % base model
     % fit RUSBoost model (default parameters: learning rate: 0.1, RatioToSmallest: [1 1])
-    rusboost = fitensemble(X_train,y_train,'RUSBoost',iters,t,'LearnRate',0.1,'RatioToSmallest',[1 1]);
+    logit = fitglm(X_train,y_train,'Distribution','binomial','link','logit');
     t_train = toc(t1);
     % turn on the following line of code if you want to get feature importance
     % [imp,ma] = predictorImportance(rusboost);
 
     % test model
     t2 = tic;
-    [label_predict,dec_values] = predict(rusboost,X_test); % predict frauds in the testing year
-    dec_values = dec_values(:,2); % get fraud probability
+    label = predict(logit, X_test);
+    label_predict = label > 0.5;
+    dec_values = label;
     t_test = toc(t2);
 
     % print evaluation results
